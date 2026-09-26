@@ -1,4 +1,1459 @@
 -
+Same process — images work exactly like any other file in git history.
+
+**For a single photo:**
+```bash
+git filter-repo --path photo.jpg --invert-paths
+```
+(swap `photo.jpg` for the actual filename)
+
+**For a whole folder of images** (e.g. `images/` or `assets/`):
+```bash
+git filter-repo --path images/ --invert-paths
+```
+
+**With BFG** (often faster for binary files like images):
+```bash
+bfg --delete-files photo.jpg
+# or for a folder:
+bfg --delete-folders images
+git reflog expire --expire=now --all
+git gc --prune=now --aggressive
+git push --force
+```
+
+**One thing specific to photos**: BFG has a handy option to strip *all* large/binary files above a size threshold, useful if you just want to slim down repo history in general:
+```bash
+bfg --strip-blobs-bigger-than 1M
+```
+
+Same caveats as before — force-push required, old clones need to re-clone, and if the photo was ever public, assume it could've been cached/scraped elsewhere even after removal from GitHub.
+
+Is this for cleaning up an old photo from one of your profile-site repos?
+-
+Not fully automatic on its own — GitHub doesn't have a "purge history" button — but here's what comes close:
+
+**Closest to automatic:**
+
+1. **GitHub's own tool**: `git filter-repo` (the official recommended tool) — you run one command and it strips the file from all commits automatically:
+```bash
+git filter-repo --path text.txt --invert-paths
+```
+This rewrites the entire history in one shot, no manual commit-by-commit editing.
+
+2. **BFG Repo-Cleaner** — even simpler, purpose-built for this:
+```bash
+bfg --delete-files text.txt
+git reflog expire --expire=now --all
+git gc --prune=now --aggressive
+git push --force
+```
+Also one-shot automatic.
+
+**Still requires you to:**
+- Run the command once
+- Force-push after
+- Anyone else who cloned the repo needs to re-clone (their old history won't sync)
+
+**True zero-effort option**: Delete the whole repo and re-create it fresh with just the current files (no history at all). That's the only way to remove history without running any cleanup command yourself.
+
+Want me to walk you through the `filter-repo` or BFG steps for your specific repo?
+-
+If you upload a file with the same name (`text.txt`) to the same folder in a GitHub repo:
+
+- **Via GitHub web UI**: it detects the existing file and asks you to confirm — it will **replace/overwrite** the old content with the new one in a new commit.
+- **Via git push**: your local file just overwrites the tracked file, and pushing creates a commit with the diff.
+- **Old content isn't lost**: it stays accessible in the commit history — you can always view or revert to the previous version.
+- Your site's live version updates immediately (or after Pages rebuilds, if you're using GitHub Pages) to reflect the new file content.
+
+So if you're uploading an "upgraded" `text.txt` with more/different posts, it'll just replace the old one — as long as your parser script still expects the same format (e.g. split by `-` lines), it'll pick up the new content automatically without needing code changes.
+
+If your post-feed parsing logic depends on a specific structure, want me to check what it expects before you upload the new file?
+-
+https://github.com/uuhjeike/Black-Knight/blob/main/Post/The%20Giver%20(Reprise)%20-%20Duke%20Dumont.mp3
+-
+https://github.com/uuhjeike/Black-Knight/blob/main/Post/Safari%20-%20Serena.mp3
+-
+https://docs.google.com/document/d/1uWjlgDlKVRLrI0x0FARsF-bxLy7UjhYcoEJ8cL33418/edit?usp=drivesdk
+-
+THE UNIVERSE THAT HAD ALREADY DIED
+
+A Cosmic Horror Novel
+
+---
+
+PROLOGUE
+
+The Girl Who Heard the Rain
+
+The first sign that something was wrong with the universe was not a dying star.
+
+It was rain.
+
+It fell over the city of Avarin at 3:17 in the morning.
+
+There was nothing unusual about rain.
+
+Avarin had been built beside an ocean nearly twice the size of Earth's Atlantic, and the city's climate engines deliberately maintained a warm, humid atmosphere. Rain was so common that most citizens no longer noticed it.
+
+But this rain was different.
+
+It fell upward.
+
+At first, nobody noticed.
+
+The streets were empty. The towers were dark. The sleeping districts had lowered their windows and dimmed their lights.
+
+Then a child woke.
+
+Her name was Nera.
+
+She was eight years old.
+
+She sat upright in her bed because somebody was knocking on the window.
+
+Three knocks.
+
+Slow.
+
+Precise.
+
+Nera looked toward the glass.
+
+Nothing was there.
+
+She waited.
+
+Three more knocks.
+
+She climbed out of bed.
+
+Her mother had always told her not to open the window during storms.
+
+Nera opened it anyway.
+
+The rain outside was rising.
+
+Every droplet was climbing from the street toward the clouds.
+
+Nera stared.
+
+Then one drop stopped directly in front of her face.
+
+It hung in the air.
+
+Perfectly spherical.
+
+Inside it she saw something.
+
+A city.
+
+Not Avarin.
+
+Not any city she knew.
+
+It was enormous.
+
+Black towers stretched beneath a sky filled with unfamiliar stars.
+
+There were millions of people running through the streets.
+
+Something enormous was moving between the buildings.
+
+Nera leaned closer.
+
+The image changed.
+
+The city was burning.
+
+She heard screaming.
+
+Then the drop spoke.
+
+Not aloud.
+
+Inside her head.
+
+Run.
+
+Nera dropped it.
+
+The droplet struck the floor.
+
+It became ordinary water.
+
+The rain outside began falling normally again.
+
+Nera ran to her mother's room.
+
+Her mother woke immediately.
+
+“What happened?”
+
+Nera was shaking.
+
+“The rain told me to run.”
+
+Her mother stared at her.
+
+Then she smiled.
+
+“It was only a dream.”
+
+Nera shook her head.
+
+“No.”
+
+“What did you see?”
+
+Nera looked toward the window.
+
+“A city.”
+
+Her mother pulled the child close.
+
+“What city?”
+
+Nera whispered:
+
+“I don't know.”
+
+A pause.
+
+“Were there people?”
+
+“Yes.”
+
+“What were they doing?”
+
+Nera began crying.
+
+“They were running from the sky.”
+
+---
+
+PART ONE
+
+THE AGE OF ORDINARY THINGS
+
+CHAPTER ONE
+
+Veyra
+
+Three hundred and twelve years later, nobody remembered Nera.
+
+Nobody remembered the rain.
+
+Nobody remembered the city inside the droplet.
+
+And nobody remembered that the universe had once whispered a warning.
+
+The planet Veyra was having a beautiful morning.
+
+Its star, Aurel, rose over the eastern ocean at 05:42.
+
+The atmosphere turned violet.
+
+The clouds became silver.
+
+The mountains caught fire with reflected sunlight.
+
+Millions of birds emerged from the forests.
+
+Across the coastal plains, enormous grazing animals moved through fields of blue grass.
+
+Children walked toward school.
+
+Workers entered factories.
+
+Ships crossed the ocean.
+
+Trains moved beneath the cities.
+
+Hospitals opened their doors.
+
+Markets filled.
+
+Religious temples rang their bells.
+
+Scientists began their experiments.
+
+Nobody screamed.
+
+Nobody ran.
+
+Nobody knew that the universe had already died once.
+
+They were not human.
+
+Humanity would not exist for billions of years.
+
+The people of Veyra called themselves Veyrans.
+
+They looked vaguely familiar to humans.
+
+Two arms.
+
+Two legs.
+
+One head.
+
+Two eyes.
+
+A mouth.
+
+A nose.
+
+Hands.
+
+A heartbeat.
+
+But the similarities ended quickly.
+
+Their bones contained a ceramic-like mineral matrix that made them unusually resistant to fracture.
+
+Their blood contained iron-bearing oxygen carriers.
+
+Their cells used carbon-based molecular structures to store information.
+
+Their muscles relied on chemical energy released through controlled oxidation.
+
+Their nervous systems communicated through electrical and chemical impulses.
+
+They breathed oxygen.
+
+They drank water.
+
+They ate plants and animals.
+
+They became sick.
+
+They healed.
+
+They aged.
+
+They loved.
+
+They hated.
+
+They reproduced.
+
+They died.
+
+Their bodies were chemistry.
+
+Nothing mystical.
+
+A Veyran body contained billions upon billions of atoms arranged into proteins, lipids, carbohydrates, nucleic acids and mineral structures.
+
+Carbon formed the skeleton of their organic molecules.
+
+Hydrogen bonded their chemistry together.
+
+Oxygen powered their metabolism.
+
+Nitrogen formed amino acids and genetic material.
+
+Phosphorus stored chemical energy and helped construct their cellular membranes.
+
+Sulfur stabilized proteins.
+
+Iron carried oxygen through their blood.
+
+Calcium strengthened their bones.
+
+Magnesium helped regulate cellular reactions.
+
+Sodium and potassium maintained electrical signals.
+
+Their bodies were not immortal.
+
+They were simply very good at repairing themselves.
+
+And that ability would eventually become a problem.
+
+---
+
+CHAPTER TWO
+
+The Ordinary Man
+
+Eren Vale was late for work.
+
+This was considered embarrassing.
+
+Not dangerous.
+
+Not tragic.
+
+Just embarrassing.
+
+He ran through the morning crowd with a piece of bread in his mouth.
+
+“Eren!”
+
+He stopped.
+
+A woman was standing behind him.
+
+She was approximately thirty years old, although Veyran biology made age difficult to estimate by appearance.
+
+Her skin was pale blue.
+
+Her hair was black.
+
+She wore a dark scientific coat.
+
+“You forgot this.”
+
+She held out his identification bracelet.
+
+Eren looked at it.
+
+Then at her.
+
+Then at the sky.
+
+“Oh.”
+
+“You were going to the Ministry without identification?”
+
+“I was distracted.”
+
+“You are always distracted.”
+
+“That is because you keep talking.”
+
+“I haven't spoken to you since yesterday.”
+
+“Exactly.”
+
+She rolled her eyes.
+
+Her name was Mara Venn.
+
+She was a biological systems researcher.
+
+Eren was a planetary engineer.
+
+They had been married for six years.
+
+They had two children.
+
+They argued frequently.
+
+They loved each other completely.
+
+Neither of them knew that their marriage would eventually become one of the last surviving relationships in the universe.
+
+For now, they were simply late.
+
+“Come on,” Mara said.
+
+They walked together.
+
+Above them, Avarin's towers rose into the morning clouds.
+
+The city contained 42 million inhabitants.
+
+Its tallest building reached nearly 11 kilometers above sea level.
+
+Aircraft moved between towers.
+
+Autonomous machines repaired roads.
+
+Artificial rivers flowed through residential districts.
+
+Agricultural gardens occupied the roofs.
+
+There was almost no poverty.
+
+Almost no starvation.
+
+Almost no disease.
+
+The Veyrans had solved many of the problems that humans would later spend thousands of years fighting.
+
+But they had not solved loneliness.
+
+They had not solved jealousy.
+
+They had not solved grief.
+
+They had not solved the question of why consciousness existed.
+
+And they certainly had not solved death.
+
+Not yet.
+
+---
+
+CHAPTER THREE
+
+The Body
+
+Mara entered the laboratory at 06:11.
+
+She stopped at the door.
+
+Everyone inside was silent.
+
+That was unusual.
+
+Scientists argued.
+
+Scientists complained.
+
+Scientists drank too much caffeine.
+
+Scientists insulted one another's theories.
+
+Silence meant something had happened.
+
+“What is it?” Mara asked.
+
+Nobody answered.
+
+She walked farther inside.
+
+There was a body on the examination table.
+
+A Veyran body.
+
+Male.
+
+Approximately forty years old.
+
+Dead.
+
+Mara approached.
+
+“What happened?”
+
+The chief physician looked at her.
+
+“We don't know.”
+
+“Cause of death?”
+
+“We don't know.”
+
+“Identification?”
+
+“No.”
+
+Mara looked at the corpse.
+
+Something was wrong.
+
+She could not immediately explain what.
+
+Then she saw the hands.
+
+The fingertips were covered in soil.
+
+Fresh soil.
+
+“Where was he found?”
+
+“Outside the city.”
+
+“How far?”
+
+“Twenty-three kilometers.”
+
+Mara frowned.
+
+“Did he die there?”
+
+“No.”
+
+“How do you know?”
+
+The physician swallowed.
+
+“Because the soil on his hands doesn't exist anywhere near the place where we found him.”
+
+Mara looked again.
+
+“What do you mean?”
+
+The physician pointed toward the microscope.
+
+“Look.”
+
+Mara placed a sample beneath the lens.
+
+The soil contained unfamiliar minerals.
+
+A crystalline structure.
+
+An isotope arrangement she had never seen.
+
+She stared at it.
+
+Then she looked at the corpse.
+
+“Where did this come from?”
+
+The physician shook his head.
+
+“We don't know.”
+
+Mara examined the lungs.
+
+There was water inside.
+
+Not blood.
+
+Water.
+
+Ocean water.
+
+She looked at the corpse's skin.
+
+It was covered with microscopic organisms.
+
+They were alive.
+
+Mara stepped backward.
+
+“That's impossible.”
+
+“What?”
+
+“These organisms aren't Veyran.”
+
+The laboratory became silent.
+
+Mara stared at them.
+
+“They aren't from this planet.”
+
+---
+
+CHAPTER FOUR
+
+The First Discovery
+
+The investigation lasted eleven days.
+
+The dead man was eventually identified.
+
+His name was Taren Sol.
+
+He had been missing for nineteen years.
+
+His family had received his death certificate.
+
+His children were adults.
+
+His wife had remarried.
+
+He should have been dead for nearly two decades.
+
+But the body on Mara's table had been biologically forty-one years old.
+
+Exactly the age Taren had been when he disappeared.
+
+His family was brought to the laboratory.
+
+His daughter entered first.
+
+She looked at the corpse.
+
+She began crying.
+
+“That's him.”
+
+Mara watched carefully.
+
+“How can you be certain?”
+
+The daughter looked offended.
+
+“Because he's my father.”
+
+“But he's been dead for nineteen years.”
+
+“No.”
+
+The woman stepped closer.
+
+“My father disappeared.”
+
+“That's different.”
+
+“No.”
+
+She touched the corpse's hand.
+
+“He told me he would come back.”
+
+Mara said nothing.
+
+The daughter whispered:
+
+“He kept his promises.”
+
+---
+
+CHAPTER FIVE
+
+The Door
+
+They eventually discovered where Taren had been.
+
+Not where.
+
+When.
+
+His body had been recovered from a location that did not exist on any map.
+
+The coordinates pointed to empty ocean.
+
+But satellite instruments showed something strange.
+
+For exactly 0.000004 seconds every seventeen hours, a structure appeared there.
+
+A door.
+
+Nothing else.
+
+Just a door.
+
+Standing in the ocean.
+
+The government sent a ship.
+
+The scientists followed.
+
+At 03:18, the door appeared.
+
+The ocean around it became perfectly still.
+
+No waves.
+
+No wind.
+
+No clouds.
+
+The door was enormous.
+
+Black.
+
+Featureless.
+
+It had no handle.
+
+No hinges.
+
+No visible mechanism.
+
+Mara stood on the deck.
+
+Eren stood beside her.
+
+“What do you think is behind it?” he asked.
+
+“I don't know.”
+
+“Do you think it was built by someone?”
+
+“Yes.”
+
+“Who?”
+
+She looked at the door.
+
+“I don't know.”
+
+Then the door opened.
+
+There was no room behind it.
+
+There was a city.
+
+A dead city.
+
+Thousands of towers.
+
+Millions of windows.
+
+And something enormous hanging above it.
+
+A black sphere.
+
+Mara stared.
+
+The sphere moved.
+
+Not through the sky.
+
+The sky moved around it.
+
+Eren whispered:
+
+“What is that?”
+
+Mara did not answer.
+
+Because she recognized it.
+
+Not from science.
+
+From her dreams.
+
+She had been seeing it since childhood.
+
+A black sphere above a burning city.
+
+A door.
+
+A warning.
+
+A voice.
+
+And suddenly she remembered something her mother had told her when she was six.
+
+A story about rain.
+
+Mara stepped backward.
+
+“The universe isn't empty.”
+
+Eren looked at her.
+
+“What?”
+
+She whispered:
+
+“It remembers.”
+
+---
+
+PART TWO
+
+THE PEOPLE WHO LOOKED TOO FAR
+
+The discovery changed everything.
+
+Within twenty years, the Veyrans had developed machines capable of entering the structure.
+
+Within forty, they had mapped the dead city.
+
+Within eighty, they had discovered that the city was older than their planet.
+
+Within one hundred and twelve years, they discovered something impossible.
+
+The city was not abandoned.
+
+It was waiting.
+
+And within its deepest chamber they found the first machine.
+
+It had no name.
+
+No visible power source.
+
+No controls.
+
+No obvious purpose.
+
+It was simply sitting in darkness.
+
+Waiting.
+
+When the scientists activated it, every machine on Veyra stopped.
+
+Every vehicle.
+
+Every computer.
+
+Every hospital.
+
+Every spacecraft.
+
+Every artificial intelligence.
+
+Every household device.
+
+For eleven seconds, the entire civilization went silent.
+
+Then every screen displayed the same sentence.
+
+YOU ARE NOT THE FIRST.
+
+The sentence disappeared.
+
+A second appeared.
+
+YOU ARE NOT THE LAST.
+
+Then the third.
+
+DO NOT BUILD THE MACHINE.
+
+The scientists stared at one another.
+
+The machine began operating.
+
+Nobody had touched it.
+
+Inside the chamber, something started breathing.
+
+Slowly.
+
+Deeply.
+
+Like a sleeping creature.
+
+Mara heard it first.
+
+Eren heard it next.
+
+Then everyone heard it.
+
+The machine inhaled.
+
+The lights dimmed.
+
+It exhaled.
+
+The entire planet shook.
+
+And somewhere beneath the ancient city, something opened its eyes.
+
+---
+
+PART THREE
+
+THE AGE OF ASCENSION
+
+The Veyrans did not stop.
+
+That was their defining characteristic.
+
+Fear could slow them.
+
+It could divide them.
+
+It could make them pray.
+
+But it could not make them stop asking questions.
+
+Their civilization expanded.
+
+They conquered disease.
+
+They mastered genetics.
+
+They learned to redesign organs.
+
+They extended lifespan.
+
+They built artificial wombs.
+
+They created synthetic organisms.
+
+They learned how to construct brains.
+
+They created machines capable of independent thought.
+
+They discovered methods of manipulating gravity.
+
+They built ships that crossed interplanetary distances in hours.
+
+Then days became minutes.
+
+Minutes became seconds.
+
+Eventually distance itself became an engineering problem.
+
+They learned to fold space.
+
+The stars became reachable.
+
+The planets became colonies.
+
+The colonies became civilizations.
+
+Civilizations became an empire.
+
+The empire became a network.
+
+And the network became something that no single Veyran could understand.
+
+Their population grew from billions to trillions.
+
+Trillions became quadrillions.
+
+Worlds were created solely for agriculture.
+
+Others existed entirely as hospitals.
+
+Some were giant universities.
+
+Some were factories.
+
+Some were temples.
+
+Some were prisons.
+
+Some were artificial wildernesses where people lived without technology.
+
+Some worlds were devoted to children.
+
+Some were devoted to the dead.
+
+And some were devoted to war.
+
+The Veyrans became powerful.
+
+Then unimaginably powerful.
+
+They dismantled planets for raw materials.
+
+They built artificial suns.
+
+They harvested stellar energy.
+
+They surrounded stars with enormous energy-collecting structures.
+
+They built computers the size of moons.
+
+They created machines that could simulate entire civilizations.
+
+They learned to manufacture matter.
+
+They learned to alter biology.
+
+They learned to resurrect the dead.
+
+They defeated aging.
+
+They defeated hunger.
+
+They defeated most disease.
+
+They defeated distance.
+
+They defeated scarcity.
+
+Then they looked across the universe.
+
+There was almost nothing left that they could not control.
+
+Almost.
+
+---
+
+PART FOUR
+
+THE WAR AGAINST GOD
+
+The first war was fought over territory.
+
+The second over resources.
+
+The third over religion.
+
+The fourth over machines.
+
+The fifth over identity.
+
+The sixth over whether consciousness belonged to biology.
+
+The seventh was different.
+
+Nobody knew who started it.
+
+The first planet simply disappeared.
+
+Then another.
+
+Then another.
+
+The Veyrans discovered an enemy that could not be located.
+
+Their weapons could not reach it.
+
+Their machines could not predict it.
+
+Their spies could not find it.
+
+Their gods could not explain it.
+
+Every attempt to attack it failed.
+
+Then, one day, every Veyran on every world heard the same voice.
+
+It said:
+
+“You have reached the end.”
+
+The governments responded with mobilization.
+
+The religions called it prophecy.
+
+The atheists called it psychological warfare.
+
+The machines called it an anomaly.
+
+The armies called it an enemy.
+
+And the civilization did what it had always done.
+
+It prepared to conquer it.
+
+They built their greatest weapon.
+
+It was powered by artificial stars.
+
+It contained the energy of collapsed stellar systems.
+
+It was larger than a planet.
+
+Its purpose was not to kill a creature.
+
+Its purpose was to destroy a universe.
+
+The weapon was called The Last Answer.
+
+They believed that if the universe itself was hostile, they could destroy the universe before it destroyed them.
+
+They were almost correct.
+
+That was the tragedy.
+
+---
+
+PART FIVE
+
+THE LAST DAY
+
+The weapon activated.
+
+Nothing happened.
+
+Then everything happened.
+
+A star disappeared.
+
+Then another.
+
+Then ten thousand.
+
+Then millions.
+
+Space began to fold.
+
+Galaxies moved.
+
+Planets changed direction.
+
+Time became unstable.
+
+The Veyrans watched their universe contract.
+
+They had believed the Big Bang was something that happened in the distant past.
+
+They were wrong.
+
+The Big Bang was waiting in their future.
+
+The universe was collapsing.
+
+Every star.
+
+Every planet.
+
+Every civilization.
+
+Every machine.
+
+Every memory.
+
+Everything.
+
+All of it began falling toward one point.
+
+The Veyrans fought.
+
+Their machines fought.
+
+Their gods were silent.
+
+Their religions collapsed.
+
+Their armies disappeared.
+
+Their cities folded into light.
+
+Their oceans became clouds.
+
+Their clouds became particles.
+
+Their particles became energy.
+
+Their energy became one.
+
+Mara Venn was old by then.
+
+She had lived for more than six thousand years.
+
+Eren had died long ago.
+
+Her children had died.
+
+Her grandchildren had died.
+
+Her descendants had become so numerous that she no longer knew their names.
+
+She was standing inside the final archive.
+
+The universe was becoming smaller outside.
+
+Mara placed her hand against the archive wall.
+
+Every memory of her civilization was stored inside.
+
+Every birth.
+
+Every death.
+
+Every war.
+
+Every song.
+
+Every scientific discovery.
+
+Every religion.
+
+Every betrayal.
+
+Every child.
+
+Every kiss.
+
+Every scream.
+
+Every prayer.
+
+Everything.
+
+She whispered:
+
+“Remember us.”
+
+The machine beside her answered.
+
+“I cannot.”
+
+Mara looked at it.
+
+“Why?”
+
+The machine's voice was almost human.
+
+“There will be no place to remember.”
+
+She closed her eyes.
+
+Then she heard breathing.
+
+Behind her.
+
+Slow.
+
+Deep.
+
+Patient.
+
+The same breathing she had heard inside the ancient machine thousands of years earlier.
+
+She turned.
+
+There was nobody there.
+
+But the darkness spoke.
+
+“Mara.”
+
+She froze.
+
+“How do you know my name?”
+
+The darkness answered:
+
+“I have known you since before you were born.”
+
+Mara began to cry.
+
+“What are you?”
+
+The answer came quietly.
+
+“The thing your universe called the beginning.”
+
+The walls disappeared.
+
+The archive disappeared.
+
+The stars disappeared.
+
+Everything became white.
+
+Then black.
+
+Then nothing.
+
+For the first time since existence had begun, there was no one left to witness it.
+
+The universe compressed.
+
+Smaller.
+
+Smaller.
+
+Smaller.
+
+Until every galaxy was contained within a point smaller than an atom.
+
+Until every atom ceased to be meaningful.
+
+Until space ceased to exist.
+
+Until time ceased to exist.
+
+Until there was nothing left.
+
+And then—
+
+Something happened.
+
+Not an explosion.
+
+Not exactly.
+
+A birth.
+
+Space appeared.
+
+Time appeared.
+
+Energy appeared.
+
+Matter appeared.
+
+Light appeared.
+
+The universe expanded.
+
+The first particles formed. 
+
+The first atoms formed.
+
+The first stars were born.
+
+Billions of years passed.
+
+Then planets.
+
+Then oceans.
+
+Then life.
+
+Then humans.
+
+Humans looked into the sky.
+
+They built telescopes.
+
+They studied the cosmic background radiation.
+
+They calculated the expansion of the universe.
+
+They searched for the beginning.
+
+They gave it a name.
+
+The Big Bang.
+
+And they believed it was the beginning of everything.
+
+They never discovered Veyra.
+
+They never discovered Mara.
+
+They never discovered the ancient machine.
+
+They never discovered the wars.
+
+They never discovered the billions of civilizations that had lived before them.
+
+They never discovered that their universe was made from the ashes of another.
+
+But one thing survived.
+
+Not a planet.
+
+Not a machine.
+
+Not a memory.
+
+A pattern.
+
+Hidden deep inside the radiation left behind by the birth of the universe.
+
+A pattern that human scientists would eventually detect.
+
+A pattern containing a message.
+
+A message written in mathematics.
+
+A message older than Earth.
+
+Older than the Sun.
+
+Older than the Milky Way.
+
+Older than matter itself.
+
+And when humanity finally decoded it, the message contained only one sentence.
+
+---
+
+WE WERE HERE BEFORE THE LIGHT.
+
+And beneath it was another.
+
+Much smaller.
+
+Almost impossible to detect.
+
+But unmistakable.
+
+PLEASE DON'T WAKE IT.
+
+---
+
+END OF BOOK ONE
+
+https://github.com/uuhjeike/Black-Knight/blob/main/Post/file_00000000a2bc81fa829e693e5cb5a976.png
+-
+kata ses life a Fust time nij taka diye. 10:27pm
+-
+Ami bavchilam br br korte but hoilo na. kaj sb I jay ga.
+-
+9:09 pm ami chul katte achechi.
+-
+https://github.com/uuhjeike/Black-Knight/blob/main/Post/1b6ad84a9805c590082124ae78da69cd.jpg
+-
+https://github.com/uuhjeike/Black-Knight/blob/main/Post/b9365b8bac236d7d69c68956ee440a35.jpg
+-
+https://github.com/uuhjeike/Black-Knight/blob/main/Post/FB_IMG_1790433139380.jpg
+-
 THE LAST WORLD BEFORE THE FIRST LIGHT
 
 A Novel of the Civilization That Lived Before the Big Bang
