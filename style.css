@@ -1,0 +1,297 @@
+/* ===========================================================
+   BLACK KNIGHT — monochrome profile theme
+   Palette is intentionally grayscale only, matching the source
+   photo. No color anywhere, including focus/hover states.
+=========================================================== */
+
+:root {
+  --black:      #050506;
+  --panel:      #0D0D0F;
+  --panel-2:    #141416;
+  --bone:       #EDEAE3;   /* primary text — soft white, not pure white */
+  --ash:        #8E8C87;   /* secondary text */
+  --rule:       #232325;
+  --glow:       #C9C6BC;   /* pale smoke used for borders/glow, still grayscale */
+  --shadow:     rgba(0, 0, 0, 0.65);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--bone);
+  font-family: 'Inter', -apple-system, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============ HERO ============ */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 32px 24px;
+  perspective: 900px; /* enables the 3D tilt on the photo below */
+}
+
+.hero-bg {
+  position: absolute;
+  inset: -5%;
+  background-image: url('https://raw.githubusercontent.com/uuhjeike/Black-Knight/main/profile%20photo.jpg');
+  background-size: cover;
+  background-position: center 20%;
+  filter: grayscale(1) brightness(0.32) contrast(1.15);
+  transform: translateY(var(--parallax, 0px)) scale(1.08);
+  will-change: transform;
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center 40%, transparent 0%, rgba(0,0,0,0.55) 70%, var(--black) 100%);
+  pointer-events: none;
+}
+
+/* Drifting smoke — pure CSS, cheap to run, no canvas/3D engine needed */
+.smoke {
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  left: -20%;
+  top: -20%;
+  background: radial-gradient(circle at 30% 40%, rgba(237,234,227,0.05), transparent 45%);
+  filter: blur(30px);
+  pointer-events: none;
+  animation: drift 34s ease-in-out infinite alternate;
+}
+.smoke-b {
+  background: radial-gradient(circle at 65% 60%, rgba(237,234,227,0.04), transparent 40%);
+  animation-duration: 46s;
+  animation-direction: alternate-reverse;
+}
+@keyframes drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(4%, -3%) scale(1.06); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transform-style: preserve-3d;
+}
+
+.photo-frame {
+  width: clamp(120px, 22vw, 168px);
+  height: clamp(120px, 22vw, 168px);
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(155deg, var(--glow), var(--rule) 60%);
+  box-shadow: 0 0 0 1px rgba(201,198,188,0.15), 0 20px 60px var(--shadow);
+  transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1) contrast(1.1);
+}
+
+.name {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 5vw, 2.8rem);
+  letter-spacing: 0.06em;
+  margin: 28px 0 8px;
+  text-transform: uppercase;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--ash);
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.stats {
+  margin-top: 22px;
+  font-size: 0.9rem;
+  color: var(--ash);
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+}
+.stats span#postCount {
+  color: var(--bone);
+  font-weight: 500;
+}
+.stats-label { color: var(--ash); }
+
+.scroll-cue {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 46px;
+  background: linear-gradient(var(--glow), transparent);
+  opacity: 0.5;
+}
+
+/* ============ FEED ============ */
+
+.feed-wrap {
+  background: var(--panel);
+  padding: 72px 20px 40px;
+}
+
+.feed {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.status {
+  color: var(--ash);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* Each post is its own visible block — a bordered card with a
+   gap between entries — so it reads unmistakably as one post,
+   not a paragraph in a continuous page of text. */
+.post {
+  background: var(--panel-2);
+  border: 1px solid rgba(237, 234, 227, 0.22);
+  border-radius: 4px;
+  padding: 24px 26px;
+  margin-bottom: 20px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.2s ease;
+}
+.post:last-child { margin-bottom: 0; }
+.post.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.post p {
+  margin: 0 0 12px;
+  max-width: 64ch;
+}
+.post p:last-child { margin-bottom: 0; }
+
+.post a {
+  color: var(--glow);
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 3px;
+  word-break: break-word;
+}
+
+.post img,
+.post video {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 3px;
+  display: block;
+  margin: 4px 0 12px;
+  background: var(--panel-2);
+  /* Only the hero background and the round profile photo are
+     desaturated for the theme — feed photos/videos always stay
+     full color, so this is explicit rather than left to chance. */
+  filter: none;
+}
+
+.post audio {
+  width: 100%;
+  margin: 4px 0 12px;
+  display: block;
+  filter: invert(0.9) grayscale(1);
+  border-radius: 3px;
+}
+
+.embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 4px 0 12px;
+  background: var(--panel-2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Multiple photos on one line lay out as a small grid instead
+   of stacking full-width one after another. */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  margin: 4px 0 12px;
+}
+.gallery img,
+.gallery video {
+  margin: 0;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  filter: none;
+}
+
+.sentinel {
+  height: 1px;
+}
+
+/* ============ FOOTER ============ */
+
+.site-footer {
+  background: var(--panel);
+  border-top: 1px solid var(--rule);
+  padding: 28px 24px 48px;
+  text-align: center;
+}
+.site-footer p {
+  margin: 0;
+  color: var(--ash);
+  font-size: 0.82rem;
+}
+.site-footer code {
+  color: var(--bone);
+}
+
+/* ============ MOTION & ACCESSIBILITY ============ */
+
+@media (prefers-reduced-motion: reduce) {
+  .smoke, .hero-bg, .post, .photo-frame {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+a:focus-visible,
+img:focus-visible {
+  outline: 1px solid var(--glow);
+  outline-offset: 3px;
+}

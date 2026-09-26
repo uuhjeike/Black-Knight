@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Knight</title>
+
+<!-- Fonts: Cinzel for the knight/gothic display feel, Inter for readable body text -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HERO / PROFILE HEADER ===== -->
+  <header class="hero" id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="smoke smoke-a"></div>
+    <div class="smoke smoke-b"></div>
+    <div class="hero-vignette"></div>
+
+    <div class="hero-content">
+      <div class="photo-frame" id="photoFrame">
+        <img
+          id="profilePhoto"
+          class="profile-photo"
+          src="https://raw.githubusercontent.com/uuhjeike/Black-Knight/main/profile%20photo.jpg"
+          alt="Black Knight"
+          decoding="async"
+        >
+      </div>
+
+      <h1 class="name">Black Knight</h1>
+      <!-- Edit this line any time — it's plain text, not tied to posts.txt -->
+      <p class="tagline">Sound from the dark throne.</p>
+
+      <div class="stats">
+        <span id="postCount">0</span><span class="stats-label">posts</span>
+      </div>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true"></div>
+  </header>
+
+  <!-- ===== FEED ===== -->
+  <main class="feed-wrap">
+    <div id="feed" class="feed">
+      <p class="status">Loading posts…</p>
+    </div>
+    <div id="sentinel" class="sentinel" aria-hidden="true"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Edit <code>posts.txt</code> to add new posts. Everything above the line is manual, everything below runs on its own.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
