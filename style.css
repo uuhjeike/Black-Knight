@@ -186,6 +186,15 @@ body {
   opacity: 0;
   transform: translateY(14px);
   transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.2s ease;
+  /* Lets the browser skip layout/paint work for posts that are
+     currently off-screen, without removing them from the page —
+     scrolling back up still works instantly, nothing is lost.
+     This is what keeps a feed with thousands of posts smooth
+     instead of getting slower (and eventually looking "stuck")
+     the further you scroll. contain-intrinsic-size gives it a
+     starting height guess before a post has been measured. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 400px;
 }
 .post:last-child { margin-bottom: 0; }
 .post.visible {

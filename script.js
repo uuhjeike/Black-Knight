@@ -120,7 +120,10 @@ function wireGalleries(root) {
 }
 
 // Infinite scroll: load the next batch only once the sentinel
-// at the bottom of the feed comes near the viewport.
+// at the bottom of the feed comes near the viewport. This is
+// backed up by a second, independent check on plain scroll
+// events below — two separate triggers means there's no single
+// point of failure that could make loading quietly stop early.
 function observeSentinel() {
   const sentinel = document.getElementById('sentinel');
   const loader = new IntersectionObserver((entries) => {
@@ -131,6 +134,24 @@ function observeSentinel() {
     });
   }, { rootMargin: '600px 0px' });
   loader.observe(sentinel);
+
+  // Backup trigger: on every scroll, if we're within a screen
+  // and a half of the bottom of the page and there are still
+  // unrendered posts, load the next batch. Runs independently of
+  // the observer above, so if it ever fails to fire, this still
+  // guarantees every post eventually loads.
+  let scrollCheckQueued = false;
+  window.addEventListener('scroll', () => {
+    if (scrollCheckQueued || renderedCount >= allPosts.length) return;
+    scrollCheckQueued = true;
+    requestAnimationFrame(() => {
+      scrollCheckQueued = false;
+      const distanceToBottom = document.documentElement.scrollHeight - window.scrollY - window.innerHeight;
+      if (distanceToBottom < window.innerHeight * 1.5 && renderedCount < allPosts.length) {
+        renderNextBatch();
+      }
+    });
+  }, { passive: true });
 }
 
 function escapeHtml(str) {
