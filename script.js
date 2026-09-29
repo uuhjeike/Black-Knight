@@ -12,6 +12,19 @@ const BATCH_SIZE = 6;
 let allPosts = [];
 let renderedCount = 0;
 
+// One shared observer for the whole page, not one per batch — a
+// feed with hundreds of batches would otherwise spin up hundreds
+// of separate IntersectionObserver instances, which adds needless
+// overhead the more posts have loaded.
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0 });
+
 async function init() {
   await loadPosts();
   setupTilt();
@@ -81,15 +94,6 @@ function renderNextBatch() {
   // (a full story, hundreds of lines) can be too tall to ever
   // reach, leaving it stuck invisible at opacity: 0 forever.
   const newPosts = feed.querySelectorAll('.post:not(.observed)');
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0 });
-
   newPosts.forEach(post => {
     post.classList.add('observed');
     revealObserver.observe(post);
