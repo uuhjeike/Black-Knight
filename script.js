@@ -54,11 +54,24 @@ function renderNextBatch() {
   next.forEach(block => {
     const article = document.createElement('article');
     article.className = 'post';
-    article.innerHTML = renderPost(block);
+    try {
+      article.innerHTML = renderPost(block);
+    } catch (err) {
+      // One malformed post should never take the rest of the feed
+      // down with it — show a small notice for just this post and
+      // keep going.
+      console.error('Skipped a post that failed to render:', err);
+      article.innerHTML = '<p class="status">This post couldn\u2019t be displayed.</p>';
+    }
     frag.appendChild(article);
   });
   wireGalleries(frag);
   feed.appendChild(frag);
+  // Always advance by the full batch size, even if a post in it
+  // failed above. If this didn't advance, a single bad post would
+  // make the loader retry the exact same batch forever the next
+  // time it scrolls into view — which looks like "only a couple
+  // of posts load and nothing after that ever shows up."
   renderedCount += next.length;
 
   // Fade each new post in once any part of it scrolls into view.
