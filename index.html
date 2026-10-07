@@ -1,27 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Black Knight</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<title>Black Knight</title>
+<meta name="description" content="Black Knight — profile and posts.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 240'%3E%3Cpath d='M100 8L188 36V120C188 176 150 214 100 234C50 214 12 176 12 120V36Z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero" id="hero">
-    <div class="hero-shade"></div>
-    <div class="hero-inner">
-      <img class="avatar" id="avatar" src="photo.jpg" alt="Black Knight profile photo">
-      <h1 id="name">Black Knight</h1>
-      <p class="bio" id="bio">Silence is the sharpest blade.</p>
+
+<header class="hero" id="hero">
+  <div class="hero-photo"></div>
+  <svg class="crest" viewBox="0 0 200 240" aria-hidden="true" focusable="false">
+    <defs>
+      <clipPath id="shieldClip">
+        <path d="M100 8L188 36V120C188 176 150 214 100 234C50 214 12 176 12 120V36Z"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#shieldClip)">
+      <rect x="12" y="8" width="88" height="88" class="quarter"/>
+      <rect x="100" y="96" width="88" height="140" class="quarter"/>
+    </g>
+    <path class="crest-line" pathLength="1" d="M100 8L188 36V120C188 176 150 214 100 234C50 214 12 176 12 120V36Z"/>
+    <path class="crest-line" pathLength="1" d="M100 8V234M12 96H188"/>
+  </svg>
+</header>
+
+<main class="wrap">
+  <section class="profile" aria-label="Profile">
+    <div class="avatar" id="avatar" data-initials="BK">
+      <img id="avatarImg" alt="Black Knight profile photo" decoding="async">
     </div>
-  </header>
+    <h1 class="name">Black Knight</h1>
+    <div class="rule" aria-hidden="true"><span></span></div>
+    <p class="count" id="count" aria-live="polite"></p>
+  </section>
 
-  <main class="feed" id="feed" aria-live="polite">
-    <p class="state" id="state">Loading posts…</p>
-  </main>
+  <section class="feed" id="feed" aria-label="Posts"></section>
+  <p class="status" id="status" role="status">Loading posts…</p>
+</main>
 
-  <footer class="foot">Black Knight</footer>
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous image">&#8249;</button>
+  <img id="lbImg" alt="">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next image">&#8250;</button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
