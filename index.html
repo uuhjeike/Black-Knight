@@ -1,120 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Grey Knights</title>
-  <meta name="description" content="Grey Knights — a Warhammer 40,000-inspired profile and archive.">
-  <meta name="theme-color" content="#0b0c0e">
-  <meta name="color-scheme" content="dark">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2312141a'/%3E%3Cpath d='M32 6l4 34h-8zM20 40h24v4H20zM30 44h4v10h-4z' fill='%23c8cdd5'/%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600&family=Cinzel:wght@500;700&display=swap">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Black Knight</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 <body>
-
-  <!-- Shared vector symbols (used via <use>) -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-    <defs>
-      <symbol id="gk-sigil" viewBox="0 0 64 64">
-        <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
-          <circle cx="32" cy="32" r="29"/>
-          <rect x="15" y="15" width="34" height="34"/>
-          <rect x="15" y="15" width="34" height="34" transform="rotate(45 32 32)"/>
-        </g>
-        <path fill="currentColor" d="M32 5l3.4 33h-6.8z"/>
-        <path fill="currentColor" d="M21 38h22v3.2H21zM30.4 41h3.2v11h-3.2z"/>
-        <circle cx="32" cy="55" r="2.4" fill="currentColor"/>
-      </symbol>
-      <symbol id="ic-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></symbol>
-      <symbol id="ic-pause" viewBox="0 0 24 24"><path fill="currentColor" d="M7 5h4v14H7zM13 5h4v14h-4z"/></symbol>
-      <symbol id="ic-left" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M15 4l-8 8 8 8"/></symbol>
-      <symbol id="ic-right" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M9 4l8 8-8 8"/></symbol>
-      <symbol id="ic-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
-      <symbol id="ic-link" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
-    </defs>
-  </svg>
-
-  <!-- Quiet atmosphere: static grain, two slow smoke layers, a few embers -->
-  <div class="atmosphere" aria-hidden="true">
-    <div class="smoke smoke-a"></div>
-    <div class="smoke smoke-b"></div>
-    <div class="embers"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-  </div>
-
-  <a class="skip-link" href="#records">Skip to transmissions</a>
-
-  <div class="page" id="page">
-
-    <header class="profile">
-      <svg class="arch" viewBox="0 0 400 320" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <path d="M14 320V140Q14 44 200 6Q386 44 386 140V320" vector-effect="non-scaling-stroke"/>
-        <path d="M34 320V146Q34 62 200 26Q366 62 366 146V320" vector-effect="non-scaling-stroke"/>
-      </svg>
-
-      <div class="avatar-frame">
-        <i class="rivet r-t"></i><i class="rivet r-r"></i><i class="rivet r-b"></i><i class="rivet r-l"></i>
-        <div class="avatar-inner">
-          <img id="avatar" class="avatar" width="400" height="400" alt="Grey Knights profile photograph" decoding="async" fetchpriority="high">
-          <svg id="avatarFallback" class="avatar-fallback" hidden aria-hidden="true" focusable="false"><use href="#gk-sigil"/></svg>
-        </div>
-        <span class="avatar-seal" aria-hidden="true"><svg class="icon"><use href="#gk-sigil"/></svg></span>
-      </div>
-
-      <h1 class="name">GREY KNIGHTS</h1>
-      <p class="identity"><span>Ordo Malleus</span><span>Daemon Hunters</span></p>
-
-      <div class="rule" aria-hidden="true"><svg class="icon"><use href="#gk-sigil"/></svg></div>
-
-      <dl class="stats" id="stats" hidden>
-        <div class="plate"><dt>Transmissions</dt><dd id="statRecords">0</dd></div>
-        <div class="plate" id="mediaPlate" hidden><dt>Media</dt><dd id="statMedia">0</dd></div>
-      </dl>
-
-      <button type="button" class="btn" id="shareBtn">
-        <svg class="icon" aria-hidden="true" focusable="false"><use href="#ic-link"/></svg>
-        Share profile
-      </button>
-    </header>
-
-    <main id="main">
-      <section id="records" aria-labelledby="records-title" tabindex="-1">
-        <h2 class="section-title" id="records-title"><span>Transmissions</span></h2>
-        <div id="feed" class="feed" aria-live="polite" aria-busy="true">
-          <div class="state" role="status">
-            <p class="state-title">Retrieving transmissions</p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="rule" aria-hidden="true"><svg class="icon"><use href="#gk-sigil"/></svg></div>
-    </footer>
-  </div>
-
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
-  <!-- Fullscreen image viewer -->
-  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
-    <div class="lb-bar">
-      <span id="lbCounter" class="lb-counter"></span>
-      <a id="lbSource" class="lb-source" href="#" target="_blank" rel="noopener noreferrer">Source</a>
-      <button type="button" id="lbClose" class="lb-btn" aria-label="Close viewer"><svg class="icon" aria-hidden="true" focusable="false"><use href="#ic-close"/></svg></button>
+  <header class="hero" id="hero">
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <img class="avatar" id="avatar" src="photo.jpg" alt="Black Knight profile photo">
+      <h1 id="name">Black Knight</h1>
+      <p class="bio" id="bio">Silence is the sharpest blade.</p>
     </div>
-    <button type="button" id="lbPrev" class="lb-btn lb-nav lb-prev" aria-label="Previous image"><svg class="icon" aria-hidden="true" focusable="false"><use href="#ic-left"/></svg></button>
-    <figure class="lb-stage">
-      <img id="lbImg" alt="">
-      <p id="lbMsg" class="lb-msg" hidden>Media unavailable</p>
-    </figure>
-    <button type="button" id="lbNext" class="lb-btn lb-nav lb-next" aria-label="Next image"><svg class="icon" aria-hidden="true" focusable="false"><use href="#ic-right"/></svg></button>
-  </div>
+  </header>
 
-  <noscript>
-    <p style="position:relative;z-index:2;text-align:center;padding:1rem;color:#c8cdd5">JavaScript is required to load the transmissions.</p>
-  </noscript>
+  <main class="feed" id="feed" aria-live="polite">
+    <p class="state" id="state">Loading posts…</p>
+  </main>
+
+  <footer class="foot">Black Knight</footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
