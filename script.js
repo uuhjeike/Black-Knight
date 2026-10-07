@@ -227,6 +227,9 @@
         f.referrerPolicy = 'strict-origin-when-cross-origin';
         box.appendChild(f);
         wrap.appendChild(box);
+        const yl = el('p', 'source');
+        yl.appendChild(anchor(item.original, 'Watch on YouTube'));
+        wrap.appendChild(yl);
         break;
       }
       case 'video': {
@@ -235,6 +238,10 @@
         v.preload = 'metadata';
         v.playsInline = true;
         v.src = item.url;
+        v.addEventListener('error', () => {
+          wrap.textContent = '';
+          wrap.appendChild(chip(item.url, 'VIDEO', 'Video could not be played here — open it directly', item.host));
+        });
         wrap.appendChild(v);
         break;
       }
@@ -382,11 +389,39 @@
         return;
       }
 
-      const frag = document.createDocumentFragment();
-      posts.forEach((p) => frag.appendChild(buildPost(p, photo)));
-      feed.appendChild(frag);
       count.textContent = `${posts.length} ${posts.length === 1 ? 'post' : 'posts'}`;
       status.textContent = '';
+
+      // Render in batches so very large posts.txt files stay fast
+      const BATCH = 30;
+      let next = 0;
+      const sentinel = el('div', 'sentinel');
+      sentinel.style.height = '1px';
+      feed.after(sentinel);
+
+      const renderBatch = () => {
+        const frag = document.createDocumentFragment();
+        const end = Math.min(next + BATCH, posts.length);
+        for (; next < end; next++) frag.appendChild(buildPost(posts[next], photo));
+        feed.appendChild(frag);
+        if (next >= posts.length) {
+          if (io) io.disconnect();
+          sentinel.remove();
+        } else if (io) {
+          io.unobserve(sentinel);   // re-arm: fires again if the sentinel is still near the viewport
+          io.observe(sentinel);
+        }
+      };
+
+      let io = null;
+      if ('IntersectionObserver' in window) {
+        io = new IntersectionObserver((entries) => {
+          if (entries.some((en) => en.isIntersecting)) renderBatch();
+        }, { rootMargin: '1800px 0px' });
+        renderBatch();
+      } else {
+        while (next < posts.length) renderBatch();
+      }
     } catch (e) {
       status.textContent = 'Posts could not be loaded. Check that posts.txt exists in the repository and that the page is served from GitHub Pages, not opened as a local file.';
     }
