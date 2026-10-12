@@ -1,4 +1,1115 @@
 -
+-
+STORAGE TECHNOLOGY MASTER REPORT
+-
+A detailed, practical, Bangladesh-focused comparison of HDD, SSD, pen drives, memory cards, optical discs, M-DISC, magnetic tape cartridges, NAS, RAID, and long-term data preservation.
+-
+Report date: 12 October 2026.
+-
+Market location: Bangladesh.
+-
+Currency: Bangladeshi taka (BDT).
+-
+Purpose: identify the best storage methods for personal files, family photos, videos, music, games, documents, offline libraries, and long-term archives.
+-
+Important note: prices are examples from online Bangladesh retailer listings around the report date. They are not guaranteed offers, and local shop prices, stock, warranty, import costs, and promotions can change.
+-
+1. EXECUTIVE SUMMARY
+-
+There is no single storage medium that is simultaneously the cheapest, fastest, most durable, easiest to recover, and best for every possible use.
+-
+The best storage method depends on how much data you have, how often you access it, how quickly you need it, how much you can spend, and how serious data loss would be.
+-
+For a home collection of several terabytes, a conventional hard disk drive (HDD) is usually the most economical starting point in Bangladesh.
+-
+For Windows, applications, active projects, and games that need fast loading, a solid-state drive (SSD) is usually the best performance choice.
+-
+For carrying files between devices, a USB pen drive or memory card is convenient, but it should not be the only copy of important data.
+-
+For a carefully selected offline archive, optical discs can provide a removable copy, but CDs and DVDs have very low capacity compared with modern HDDs.
+-
+Blu-ray offers more capacity than CD or DVD, but requires a Blu-ray-compatible writer and reader.
+-
+M-DISC is marketed as archival optical media. It may be useful for selected files, but it is not a guarantee that data will survive forever.
+-
+Magnetic tape cartridges, including LTO formats, can be excellent for professional large-scale archives. The tape drive and supporting equipment can make the complete system too expensive for an ordinary household.
+-
+NAS is a convenient way to share storage across a home network, but a NAS is not a backup by itself.
+-
+RAID can keep a system running after certain drive failures, but RAID is not a substitute for an independent backup.
+-
+For important family data, a strong practical arrangement is a main HDD plus a second independent backup HDD that is disconnected when not being updated.
+-
+For irreplaceable files, use more than one copy, verify the copies, and keep at least one copy physically separate from the main computer.
+-
+The most important principle is that one device containing the only copy of a file is a single point of failure.
+-
+2. WHAT DOES “HSD” MEAN?
+-
+“HSD” is not a standard consumer storage category comparable with HDD or SSD.
+-
+This report assumes “HSD” may have been a typo for HDD, meaning Hard Disk Drive.
+-
+If “HSD” refers to a particular product, technology, or brand, its exact name or a photograph would be needed for an accurate comparison.
+-
+3. STORAGE TECHNOLOGY 1: HDD — HARD DISK DRIVE
+-
+An HDD stores data magnetically on rotating platters inside a sealed mechanical assembly.
+-
+A read/write head moves across the platter surface to access information.
+-
+Common desktop HDDs use a 3.5-inch form factor and usually need both a SATA data connection and a separate power connection.
+-
+Portable external HDDs often use a 2.5-inch drive inside a USB enclosure and can commonly draw power from USB.
+-
+Larger external HDDs often use a 3.5-inch drive and require an external power adapter.
+-
+The major advantage of HDDs is the relatively low price per terabyte at high capacities.
+-
+HDDs are available in multi-terabyte capacities, making them practical for video collections, family photographs, music libraries, games, backups, and offline archives.
+-
+An HDD is generally slower than an SSD, especially when opening many small files or starting an operating system.
+-
+Typical sequential transfer rates for many modern consumer HDDs may be roughly 100–250 MB/s, but actual speed depends on model, platter location, workload, interface, and drive condition.
+-
+HDDs contain moving parts, so they are more vulnerable than SSDs to impact and vibration, especially while operating.
+-
+A powered HDD should never be moved roughly or dropped.
+-
+A powered-off HDD can still be damaged by a drop, shock, or mishandling.
+-
+Heat, vibration, unstable power, manufacturing variation, age, and mechanical wear can all affect reliability.
+-
+An HDD may work for many years, but no individual drive has a guaranteed lifetime.
+-
+HDDs are particularly useful for storing large files that do not need SSD-level speed.
+-
+A home archive can use an HDD as its main storage device and another HDD as a separate backup.
+-
+A used HDD may be cheaper, but its remaining life is uncertain and its warranty may be limited or absent.
+-
+Do not use a used HDD as the only location for important family data.
+-
+Before trusting a used drive, check its SMART health information where available and perform a suitable read test.
+-
+Do not assume a seller’s claim of “100% health” guarantees future reliability.
+-
+Best use of HDD: economical bulk storage, local archives, media libraries, and independent backups.
+-
+Main weakness of HDD: mechanical failure risk and sensitivity to physical shock.
+-
+4. STORAGE TECHNOLOGY 2: SSD — SOLID-STATE DRIVE
+-
+An SSD stores data in flash memory and has no spinning platters.
+-
+A SATA SSD connects through a SATA interface and commonly fits a 2.5-inch drive bay.
+-
+An NVMe SSD commonly uses an M.2 form factor and connects through PCI Express.
+-
+M.2 describes a physical form factor and does not automatically mean that a drive uses NVMe; some M.2 drives use SATA.
+-
+Always check the computer’s supported interface, keying, length, and protocol before purchasing an SSD.
+-
+SSDs are usually much faster than HDDs for operating-system startup, application loading, and random access.
+-
+A SATA SSD may deliver around 400–560 MB/s sequential transfer in suitable conditions.
+-
+NVMe SSDs can range from around 1,500 MB/s to many thousands of MB/s, depending on the drive and PCIe generation.
+-
+Advertised maximum speeds are not guaranteed for every file, computer, enclosure, or workload.
+-
+SSDs are silent and use no mechanical spindle or moving read/write head.
+-
+SSDs generally tolerate ordinary bumps better than an operating HDD, but they can still be damaged by impact, water, heat, electrical faults, or connector damage.
+-
+Flash memory has finite write endurance, often described by TBW or drive writes per day.
+-
+A reputable SSD can last many years in normal use, but its health and remaining endurance depend on the model and workload.
+-
+Unpowered data retention depends on the flash type, wear, temperature, and device design.
+-
+An SSD should not be treated as a guaranteed permanent cold-storage medium.
+-
+At large capacities, SSDs often cost considerably more than HDDs in Bangladesh.
+-
+For a collection of several terabytes, using only SSDs can require a much larger budget.
+-
+Best use of SSD: operating system, software, active projects, frequently played games, and portable working files.
+-
+Main weakness of SSD: higher cost per terabyte and the need to consider flash endurance and unpowered retention.
+-
+5. SATA SSD VERSUS NVMe SSD
+-
+A SATA SSD is often sufficient for ordinary Windows use, web browsing, documents, and many games.
+-
+An NVMe SSD can offer substantially higher transfer rates, particularly for large sequential workloads.
+-
+A computer that does not support NVMe cannot use an NVMe drive as though it were a SATA drive without suitable hardware.
+-
+An M.2 SATA drive and an M.2 NVMe drive may look similar but can be electrically incompatible with a particular slot.
+-
+For archive storage, the higher speed of NVMe usually does not justify its extra cost if files are rarely accessed.
+-
+For a laptop upgrade, confirm the exact model’s storage specifications before buying.
+-
+Best value decision: use an SSD for speed and an HDD for large, less frequently accessed files.
+-
+6. STORAGE TECHNOLOGY 3: EXTERNAL HDD
+-
+An external HDD is a hard drive installed inside a protective enclosure with a USB connection.
+-
+It is convenient because it can be moved between compatible computers without opening the computer case.
+-
+A portable 2.5-inch model commonly receives power through USB.
+-
+A 3.5-inch external HDD commonly requires its own power adapter.
+-
+USB connector type and USB speed affect transfer performance, but the internal HDD remains a mechanical device.
+-
+External HDDs are useful for backup, offline media libraries, transferring large files, and storing collections that do not fit on a laptop.
+-
+The enclosure, USB cable, connector, power supply, and internal drive can each fail independently.
+-
+A drive that disconnects repeatedly may have a cable, power, enclosure, port, or internal-drive problem.
+-
+Use the operating system’s safe-eject function before disconnecting the drive.
+-
+Do not leave a backup drive connected permanently if it is meant to protect against ransomware or accidental deletion.
+-
+Best use: a straightforward, portable multi-terabyte storage and backup device.
+-
+Main weakness: still vulnerable to mechanical shock and not a substitute for a second copy.
+-
+7. STORAGE TECHNOLOGY 4: EXTERNAL SSD
+-
+An external SSD combines flash storage with a USB enclosure.
+-
+It is useful when large files must be transferred quickly between computers.
+-
+It has no spinning platters and is generally better suited than an HDD to frequent movement.
+-
+Its real speed depends on the SSD controller, flash memory, USB interface, host computer, cable, and thermal conditions.
+-
+Some very fast external SSDs require a host port that supports the advertised high-speed USB standard.
+-
+A fast SSD connected to a slower port will operate at the lower practical speed.
+-
+External SSDs are suitable for editing video, transporting active projects, running compatible applications, and carrying frequently accessed files.
+-
+A 1 TB external SSD can cost as much as or more than a substantially larger HDD, depending on model and current market conditions.
+-
+Do not buy an external SSD only because the seller advertises a very high speed; check independent reviews and the exact model specifications.
+-
+Best use: fast portable storage and working files.
+-
+Main weakness: high cost for several terabytes compared with HDD.
+-
+8. STORAGE TECHNOLOGY 5: USB PEN DRIVE
+-
+A USB pen drive stores data in flash memory and connects directly to a USB port.
+-
+Pen drives are small, easy to carry, and convenient for transferring documents, installers, presentations, and small media collections.
+-
+Some models use USB-A; others use USB-C or include both connectors.
+-
+A phone may require USB OTG support and a suitable adapter before it can read a pen drive.
+-
+Pen-drive speeds vary greatly between inexpensive models and higher-performance products.
+-
+Some drives advertise high peak read speeds but have much slower sustained write speeds.
+-
+Cheap drives may slow down significantly when copying large files.
+-
+The controller and flash memory quality can vary between products, even when the advertised capacity is identical.
+-
+Fake-capacity drives may claim to hold more data than they can actually store.
+-
+Test a new pen drive’s full capacity with a reputable verification tool before trusting it with valuable files.
+-
+A pen drive can be lost, bent, crushed, exposed to water, or damaged at its connector.
+-
+Flash memory is not a guarantee of indefinite data retention.
+-
+A pen drive is usually poor value per terabyte for a multi-terabyte collection.
+-
+Best use: short-term file transfer, small portable collections, bootable installers, and temporary hand-off of files.
+-
+Main weakness: small size, loss risk, variable quality, and poor suitability as the only archive copy.
+-
+9. STORAGE TECHNOLOGY 6: SD AND MICROSD MEMORY CARDS
+-
+SD and microSD cards are small flash-storage devices commonly used in phones, cameras, handheld consoles, dash cameras, and other equipment.
+-
+Their physical size makes them convenient for devices that have a built-in card slot.
+-
+Card capacity, read speed, write speed, and endurance vary by model and rating.
+-
+A card designed for repeated video recording may have a different endurance profile from a low-cost card intended for occasional file transfer.
+-
+For cameras or dash cameras, use a card that matches the device’s capacity and sustained-write requirements.
+-
+For phone storage, check whether the phone supports microSD at all; many phones do not have a card slot.
+-
+Counterfeit cards can report false capacity or fail when filled beyond their real memory.
+-
+Test a new card before using it for important photos or video.
+-
+Cards are easy to lose because they are very small.
+-
+Do not store the only copy of family photos on a memory card.
+-
+Best use: storage expansion for compatible devices and recording media in supported cameras.
+-
+Main weakness: small size, loss risk, variable endurance, and counterfeit risk.
+-
+10. STORAGE TECHNOLOGY 7: CD
+-
+A CD is an optical disc read by a compatible optical drive using a laser.
+-
+A common recordable CD capacity is approximately 650–700 MB.
+-
+CD-R is generally a write-once format; CD-RW is rewritable.
+-
+A CD can be useful for small document sets, older software, audio, and legacy data.
+-
+A CD cannot hold a large modern photo/video archive without using a very large number of discs.
+-
+At 700 MB per disc, 5 TB would require roughly 7,143 discs before accounting for practical overhead.
+-
+Managing thousands of CDs would be costly in time, physical space, indexing, and verification.
+-
+Recordable-disc quality varies, and the longevity of a disc depends on its materials, manufacturing quality, recording quality, storage, and handling.
+-
+Scratches, fingerprints, heat, humidity, sunlight, and physical damage can make a disc difficult or impossible to read.
+-
+Store discs in protective cases and keep them away from direct sunlight, heat, and moisture.
+-
+A compatible CD drive is required to read the disc.
+-
+A modern laptop may not have an optical drive, so an external USB optical drive may be needed.
+-
+Best use: small legacy data sets, audio CDs, and occasional offline copies.
+-
+Main weakness: extremely low capacity compared with HDD and SSD.
+-
+11. STORAGE TECHNOLOGY 8: DVD
+-
+A single-layer DVD commonly holds about 4.7 GB.
+-
+A dual-layer DVD commonly holds about 8.5 GB.
+-
+DVD-R and DVD+R are write-once formats; DVD-RW and DVD+RW are rewritable.
+-
+A DVD writer must support the disc type being used.
+-
+A DVD writer can usually read CDs and DVDs, but it does not automatically read Blu-ray discs.
+-
+At 4.7 GB per single-layer disc, 5 TB would require roughly 1,064 discs before overhead.
+-
+DVDs are more practical than CDs for small offline collections, but remain inconvenient for several terabytes.
+-
+DVDs can be useful for older software, small document archives, or a carefully selected set of files.
+-
+Disc labels should be written using suitable methods; avoid scratching the recording surface.
+-
+After burning a disc, verify the written files and keep a second copy of anything important.
+-
+Best use: small offline archives and legacy software where compatible drives are available.
+-
+Main weakness: low capacity and the work involved in managing many discs.
+-
+12. STORAGE TECHNOLOGY 9: BLU-RAY DISC
+-
+Blu-ray is an optical-disc format with more capacity than CD or DVD.
+-
+Common capacities include 25 GB for single-layer discs and 50 GB for dual-layer discs.
+-
+Higher-capacity Blu-ray formats exist, but availability, price, and drive compatibility vary.
+-
+A standard DVD-only drive cannot read a Blu-ray disc.
+-
+A Blu-ray writer is required to burn writable Blu-ray media.
+-
+At 25 GB per disc, 5 TB requires roughly 200 discs before overhead.
+-
+At 100 GB per compatible high-capacity disc, 5 TB requires roughly 50 discs before overhead.
+-
+Blu-ray can be a practical extra copy for selected offline material if the user already owns compatible equipment and can source genuine media.
+-
+The complete cost includes the writer, discs, storage cases, indexing, and time spent burning and verifying.
+-
+Blu-ray is not automatically more reliable than HDD merely because it is optical.
+-
+Best use: selected offline archives, large collections of files that will not change frequently, and media distribution.
+-
+Main weakness: equipment and media cost, capacity limits, and future reader compatibility.
+-
+13. STORAGE TECHNOLOGY 10: M-DISC
+-
+M-DISC is a branded archival optical-media family offered in DVD and Blu-ray forms.
+-
+It is marketed for long-term data preservation.
+-
+The exact disc format and capacity determine which writer and reader can be used.
+-
+A DVD writer may support DVD M-DISC but may not support Blu-ray M-DISC.
+-
+Always check the exact drive’s official compatibility specifications before purchasing media.
+-
+M-DISC is not a guarantee that every recorded disc will remain readable for a specific number of years in every environment.
+-
+Long-term reliability still depends on correct writing, media authenticity, handling, storage conditions, and access to a compatible reader.
+-
+After writing a disc, verify the files and retain a separate copy on another storage device.
+-
+Use M-DISC for selected irreplaceable files rather than trying to store an entire multi-terabyte library on it without calculating the full cost.
+-
+Best use: an additional offline copy of selected documents, family records, and other important files.
+-
+Main weakness: cost, limited capacity per disc, availability, and the need for compatible optical hardware.
+-
+14. STORAGE TECHNOLOGY 11: MAGNETIC TAPE CARTRIDGES
+-
+Magnetic tape cartridges store data on a length of magnetic tape wound inside a cartridge.
+-
+LTO is a widely used family of professional tape technologies.
+-
+Tape is used by businesses, institutions, research organisations, and large archives that need to store large quantities of data.
+-
+Tape can offer high capacity per cartridge and attractive media cost per terabyte at scale.
+-
+Tape is particularly suitable for sequential backup and archive operations.
+-
+Tape is not designed to behave like a normal USB pen drive.
+-
+Finding an individual file can require mounting the cartridge and seeking through tape data, depending on the backup format and software.
+-
+A compatible tape drive is required to read or write the cartridge.
+-
+The drive must support the relevant LTO generation and the cartridge’s compatibility requirements.
+-
+The complete system may require a SAS or Fibre Channel interface, a suitable host adapter, cables, drivers, and backup software.
+-
+A cartridge alone is not useful if the owner cannot access a compatible drive and the software needed to interpret the data.
+-
+Tape systems have high upfront equipment costs, making them difficult to justify for a home archive of only a few terabytes.
+-
+Tape can be reliable when handled and stored according to manufacturer guidance, but it still requires periodic verification and a migration plan.
+-
+Tape drives and interfaces change over time, so a future computer may not be able to read an old cartridge without compatible hardware.
+-
+Professional archives plan for hardware replacement, tape-generation compatibility, software recovery, and periodic migration.
+-
+Best use: large professional archives, enterprise backup, and situations where the media cost advantage outweighs the equipment cost.
+-
+Main weakness: expensive compatible hardware, sequential access, technical complexity, and future compatibility planning.
+-
+15. STORAGE TECHNOLOGY 12: NAS
+-
+NAS means Network-Attached Storage.
+-
+A NAS is a dedicated appliance or computer that provides files to other devices over a local network.
+-
+A NAS may use one HDD, several HDDs, SSDs, or a mixture, depending on the model.
+-
+A NAS can let a phone, laptop, desktop, or other supported device access shared files over a home network.
+-
+A NAS is useful for a central family media library, local backups, and sharing documents between devices.
+-
+A NAS can consume electricity whenever it is running, so power use matters for a budget-conscious household.
+-
+A NAS may cost more than a simple external HDD because the enclosure or computer, network hardware, and drives all contribute to the price.
+-
+A NAS is not automatically a backup; if its drives fail or its files are deleted, the data may still be lost.
+-
+A NAS can be protected by a separate backup drive that is disconnected after backup.
+-
+Best use: centralised local storage and sharing across multiple devices.
+-
+Main weakness: extra cost, configuration, power consumption, and the continuing need for backup.
+-
+16. STORAGE TECHNOLOGY 13: RAID
+-
+RAID means Redundant Array of Independent Disks.
+-
+RAID combines multiple drives to provide some combination of capacity, performance, and fault tolerance.
+-
+RAID 0 stripes data across drives for capacity and speed but has no redundancy.
+-
+If one drive in a RAID 0 array fails, the entire array’s data may become inaccessible.
+-
+RAID 1 mirrors data across drives and can survive certain single-drive failures.
+-
+RAID 5 uses parity and is designed to tolerate one drive failure in the array.
+-
+RAID 6 uses double parity and is designed to tolerate up to two drive failures in the intended configuration.
+-
+RAID 10 combines mirroring and striping and generally needs at least four drives in common implementations.
+-
+The exact usable capacity depends on the RAID level, number of drives, drive sizes, and system implementation.
+-
+RAID does not protect against every cause of data loss.
+-
+Accidental deletion may be mirrored to every drive.
+-
+Ransomware may encrypt data across the entire array.
+-
+Theft, fire, flood, power damage, controller failure, and user error can affect the entire system.
+-
+A RAID rebuild after a failed drive can take a long time and can place additional load on the remaining drives.
+-
+For a low-budget home user, two independent HDDs may be simpler and more economical than a RAID enclosure with multiple drives.
+-
+Best use: availability and service continuity when downtime matters.
+-
+Main weakness: added cost and complexity, while still requiring an independent backup.
+-
+17. BANGLADESH MARKET PRICES: HDD
+-
+The following prices are examples from local online listings, not guaranteed offers.
+-
+Portable external HDD, 1 TB: example listings have been around ৳10,700–৳13,000, depending on model and seller.
+-
+Portable external HDD, 2 TB: example listings have been around ৳15,700–৳19,500.
+-
+Portable external HDD, 4 TB: example listings have been around ৳21,500–৳32,000.
+-
+Portable external HDD, 6 TB: an example listing for a Seagate Expansion 6 TB has been around ৳26,500.
+-
+Portable external HDD, 8 TB: example listings have been around ৳39,500–৳46,000.
+-
+Portable external HDD, 10 TB: an example WD My Book listing has been around ৳41,000.
+-
+Portable external HDD, 12 TB: example listings have been around ৳50,000–৳51,300.
+-
+Internal HDD prices vary by capacity, RPM, cache, warranty, model family, and whether the drive is desktop, surveillance, or NAS class.
+-
+One local listing example showed a 4 TB desktop HDD around ৳17,500, but other 4 TB models may cost more.
+-
+A cheap internal 3.5-inch HDD may need a desktop SATA connection, a suitable power supply, and a case or dock if it is not installed inside a PC.
+-
+Do not compare an internal bare drive’s price with an external drive without including the enclosure, power, and connection costs.
+-
+For a current quote, check the exact model and warranty at Bangladesh retailers such as Star Tech or PC House.
+-
+18. BANGLADESH MARKET PRICES: SSD
+-
+Prices below are examples from Bangladesh retailer listings and can change.
+-
+Portable SSD, 500 GB: examples range from around ৳10,500 to ৳14,000 depending on model.
+-
+Portable SSD, 512 GB: example listings include some models around ৳9,500–৳12,000.
+-
+Portable SSD, 1 TB: examples range from around ৳15,500 to ৳27,000, depending on brand, speed, and features.
+-
+Portable SSD, 2 TB: examples range from around ৳28,500 to ৳43,000 or more depending on model and listing.
+-
+Premium portable SSDs can cost more if they support higher transfer rates, ruggedisation, encryption, or advanced interfaces.
+-
+A high-performance external SSD may not reach its advertised maximum speed when connected to a slower USB port.
+-
+For exact current models, compare specifications and prices on local retailers’ official listings.
+-
+For multi-terabyte archive storage, calculate the total price of all required SSDs before deciding.
+-
+19. BANGLADESH MARKET PRICES: USB PEN DRIVES
+-
+USB pen-drive prices depend on capacity, connector type, brand, sustained write speed, and warranty.
+-
+A 64 GB pen drive may cost roughly ৳1,200–৳1,800 for some listed models, while premium models may cost more.
+-
+A 128 GB pen drive may cost roughly ৳1,700–৳3,000 for some listed models.
+-
+A 256 GB pen drive may cost roughly ৳4,800–৳6,800 for some branded models.
+-
+A 512 GB pen drive may cost around ৳9,900 or more for certain models.
+-
+These are indicative examples, not a guarantee of the cheapest available price.
+-
+Avoid choosing a pen drive based only on its advertised capacity.
+-
+Check the seller’s reputation, model number, return policy, warranty, and real-world reviews.
+-
+For important files, test the entire capacity before using the device.
+-
+A pen drive is not normally the most economical option for storing several terabytes.
+-
+20. BANGLADESH MARKET PRICES: CD, DVD, AND WRITERS
+-
+A Verbatim CD-R 700 MB 10-pack has been listed around ৳1,900 in a Bangladesh retailer example.
+-
+A Verbatim CD-R 700 MB 50-disc cake box has been listed around ৳8,000.
+-
+A Verbatim DVD-R 4.7 GB 10-pack has been listed around ৳1,750.
+-
+A Verbatim DVD-R or DVD+R 4.7 GB 50-disc cake box has been listed around ৳8,000 in retailer examples.
+-
+A Verbatim DVD+RW 4.7 GB 5-pack has been listed around ৳1,000.
+-
+An external USB CD/DVD writer has been listed around ৳3,600–৳4,600 at some Bangladesh retailers.
+-
+Some marketplace listings offer cheaper generic USB optical drives, but quality, warranty, and compatibility may differ.
+-
+An external DVD writer normally reads and writes supported CDs and DVDs, but does not automatically support Blu-ray.
+-
+The complete cost of an optical archive includes the writer, discs, cases, storage space, labelling, and time spent writing and verifying.
+-
+For current availability, check the exact writer and disc model at local retailers before buying.
+-
+21. BANGLADESH MARKET PRICES: BLU-RAY, M-DISC, AND TAPE
+-
+Blu-ray writers, high-capacity Blu-ray media, M-DISC, LTO tape cartridges, and LTO tape drives may be difficult to compare because local stock and model availability are inconsistent.
+-
+Do not assume a normal DVD writer supports Blu-ray or every M-DISC format.
+-
+Before buying M-DISC, check the exact disc capacity and confirm the writer supports that specific format.
+-
+Before buying LTO tape, price the entire system rather than only the cartridge.
+-
+The complete tape-system cost can include a compatible drive, host adapter, cables, backup software, cleaning media, cartridges, and future migration equipment.
+-
+A tape drive can cost far more than the media, which is why tape is usually a professional-scale choice rather than the cheapest household option.
+-
+For these categories, obtain a current written quote from a reputable supplier and verify the exact model, generation, warranty, and compatibility.
+-
+22. COST PER TERABYTE
+-
+Cost per terabyte is calculated by dividing the device price by its advertised capacity in terabytes.
+-
+It is a useful comparison, but it does not measure speed, warranty, failure risk, recovery cost, or the cost of making a second copy.
+-
+Example: a ৳26,500 6 TB external HDD costs about ৳4,417 per advertised terabyte.
+-
+Example: a ৳50,000 12 TB external HDD costs about ৳4,167 per advertised terabyte.
+-
+Example: a ৳22,500 1 TB external SSD costs about ৳22,500 per advertised terabyte.
+-
+Example: a ৳4,800 256 GB pen drive works out to about ৳18,750 per decimal terabyte when extrapolated.
+-
+These calculations are examples based on listed prices, not universal market averages.
+-
+Advertised capacity uses decimal units, where 1 TB equals 1,000 GB.
+-
+Operating systems may show a different capacity because of unit conversion and filesystem overhead.
+-
+For safe storage, calculate the cost of two copies rather than the cost of one device alone.
+-
+23. HOW MUCH CAPACITY DO YOU REALLY NEED?
+-
+A 1 TB drive is suitable for a smaller collection, but may be insufficient for large video archives.
+-
+A 2 TB drive can suit moderate personal storage, depending on video quality and game sizes.
+-
+A 4 TB drive can store a substantial media collection, but may be too small for a collection already close to 5 TB.
+-
+A 6 TB drive may hold a 5 TB collection, but leaves little room for growth, temporary copies, and filesystem overhead.
+-
+An 8 TB drive gives more headroom for a collection close to 5 TB.
+-
+A 12 TB drive offers more room for future growth, but costs more upfront and makes a second matching backup more expensive.
+-
+A single larger drive is not automatically safer than two independent drives.
+-
+If the archive is growing, estimate future capacity over several years before buying.
+-
+Do not fill a drive to 100 percent if you can avoid it; leave space for growth and temporary operations.
+-
+24. HOW MANY DISCS WOULD A 5 TB ARCHIVE REQUIRE?
+-
+At approximately 700 MB per CD, a 5 TB archive would require roughly 7,143 discs before overhead.
+-
+At approximately 4.7 GB per single-layer DVD, a 5 TB archive would require roughly 1,064 discs before overhead.
+-
+At approximately 25 GB per single-layer Blu-ray, a 5 TB archive would require roughly 200 discs before overhead.
+-
+At approximately 50 GB per dual-layer Blu-ray, a 5 TB archive would require roughly 100 discs before overhead.
+-
+At approximately 100 GB per compatible high-capacity Blu-ray, a 5 TB archive would require roughly 50 discs before overhead.
+-
+The exact number depends on actual file sizes, usable capacity, formatting, and how data is divided between discs.
+-
+These numbers explain why HDDs are generally more practical for a large home archive.
+-
+Optical media may still be useful for a selected subset of the most important files.
+-
+25. SPEED COMPARISON
+-
+HDD: often around 100–250 MB/s sequential transfer on many consumer models, with slower random access.
+-
+SATA SSD: often around 400–560 MB/s sequential transfer in suitable conditions.
+-
+NVMe SSD: can range from around 1,500 MB/s to many thousands of MB/s depending on model and interface.
+-
+USB pen drive: performance varies widely; sustained writes may be much slower than advertised peak reads.
+-
+SD/microSD card: speed depends on the model, rating, reader, and workload.
+-
+CD/DVD/Blu-ray: transfer rates depend on format, drive speed, disc condition, and data location.
+-
+Tape: can offer high sequential throughput but is not designed for fast random access to arbitrary files.
+-
+These figures are approximate examples, not promises for every device.
+-
+For ordinary browsing and application startup, random-access performance often matters more than peak sequential speed.
+-
+For a cold archive that is rarely accessed, capacity price and reliability practices may matter more than maximum transfer speed.
+-
+26. LONG-TERM RELIABILITY: THE IMPORTANT TRUTH
+-
+No consumer storage medium is guaranteed to preserve data forever.
+-
+Long-term survival depends on the device, media quality, environment, handling, usage, verification, and whether the data is copied to new media when needed.
+-
+An HDD can fail mechanically or electronically.
+-
+An SSD can fail electronically and its unpowered data retention depends on flash type, wear, and temperature.
+-
+A pen drive can fail or be lost, and its quality varies.
+-
+A memory card can wear out, become corrupted, or be counterfeit.
+-
+An optical disc can be scratched, damaged by heat or humidity, or become unreadable.
+-
+M-DISC is marketed for archival use, but the particular disc and storage conditions still matter.
+-
+Tape can be stored for long periods under proper conditions, but requires compatible hardware and planned migration.
+-
+RAID can survive certain drive failures, but does not protect against every event that can destroy data.
+-
+The most reliable strategy is to keep independent copies and verify them periodically.
+-
+A second copy on a separate device usually adds more practical protection than relying on a single supposedly long-lasting device.
+-
+27. HOW TO READ OR PLAY EACH STORAGE TYPE
+-
+Internal SATA HDD: requires a compatible SATA data connection, suitable power, and a computer or enclosure that supports the drive.
+-
+External HDD: normally connects to a computer by USB; some TVs and other devices may read it if they support its filesystem, partitioning, power needs, and file formats.
+-
+SATA SSD: requires a compatible SATA connection or a USB-to-SATA enclosure.
+-
+NVMe SSD: requires a compatible NVMe/PCIe slot or a suitable NVMe USB enclosure.
+-
+USB pen drive: requires a compatible USB port; phones may need USB OTG and a suitable adapter.
+-
+SD/microSD card: requires a compatible card slot or card reader.
+-
+CD: requires a CD-compatible optical drive.
+-
+DVD: requires a DVD-compatible optical drive; a DVD writer can usually also read supported CDs.
+-
+Blu-ray: requires a Blu-ray-compatible drive; a DVD-only drive cannot read Blu-ray.
+-
+M-DISC: requires a writer/reader compatible with the exact M-DISC format and capacity.
+-
+LTO tape: requires a compatible tape drive, suitable interface, software, and compatible cartridge generation.
+-
+NAS: requires a compatible local network connection and supported file-sharing protocol.
+-
+A drive that physically connects is not necessarily supported by every TV, phone, operating system, game console, or router.
+-
+Filesystem, partition style, file-size limits, codec support, power requirements, and encryption can all affect compatibility.
+-
+28. WHICH DEVICE IS BEST FOR A TV?
+-
+A TV with USB media playback may read certain external HDDs, pen drives, or SSDs.
+-
+TV compatibility depends on filesystem, partition size, USB power, video codec, audio codec, subtitle format, and the TV's firmware.
+-
+Some TVs cannot power a high-demand external HDD reliably from their USB port.
+-
+Some TVs support FAT32 but not every other filesystem; some newer models support exFAT or NTFS. Check the exact TV manual.
+-
+A TV does not usually read an internal SATA drive without an appropriate enclosure or dock.
+-
+A TV's USB port is not automatically a CD/DVD/Blu-ray player.
+-
+If a TV does not support a video codec, the file may not play even if the TV can see the drive.
+-
+29. WHICH DEVICE IS BEST FOR A PHONE?
+-
+A phone with USB OTG may read a compatible pen drive or external SSD through an adapter.
+-
+Some phones can access external HDDs, but power draw can exceed what the phone's USB port can provide.
+-
+A powered USB hub or suitable powered enclosure may be required for some external drives.
+-
+Many modern phones do not have a microSD slot, so verify the exact phone model.
+-
+A phone can often read common photos, videos, documents, and audio files, but app and filesystem support vary.
+-
+For long transfers, avoid loose connectors and unstable adapters.
+-
+Always keep another copy of phone photos and documents before deleting the originals.
+-
+30. BEST STORAGE FOR GAMES
+-
+An SSD usually gives faster game loading and can improve system responsiveness.
+-
+A large HDD can be economical for storing a large game library, older games, installers, and games that tolerate slower loading.
+-
+Some newer games require an SSD or perform poorly when installed on an HDD; check each game's requirements.
+-
+External USB drives may work with some consoles or PCs, but supported formats and game-running rules vary by platform.
+-
+A pen drive is not a sensible primary location for a large modern game library.
+-
+Optical discs may hold game installers or older games, but many modern games require downloads, updates, launchers, or online authentication.
+-
+Keep installers and important saves backed up separately when the platform allows it.
+-
+31. BEST STORAGE FOR FAMILY PHOTOS AND VIDEOS
+-
+Keep the main collection on a sufficiently large HDD or NAS.
+-
+Keep a second independent copy on another HDD.
+-
+Organise files into clear folders by year, event, or family member where appropriate.
+-
+Avoid relying only on a phone, memory card, pen drive, or social-media account.
+-
+For irreplaceable photographs, keep a separate copy physically away from the main computer.
+-
+Periodically open sample images and videos from the backup to confirm that they are readable.
+-
+Use checksums for especially important archives if you can manage them.
+-
+Keep a simple text inventory that records the contents and date of each backup.
+-
+32. BEST STORAGE FOR DOCUMENTS
+-
+Documents generally require very little capacity compared with high-resolution video.
+-
+Keep important documents in more than one location.
+-
+Use widely supported formats where appropriate, such as PDF for documents and common image formats for scans.
+-
+For long-term preservation, retain the original editable files when possible as well as a broadly readable copy.
+-
+Protect private documents with encryption when needed.
+-
+Store the recovery key separately from the encrypted drive.
+-
+Do not rely on one pen drive for identity documents, certificates, legal records, or family records.
+-
+33. BEST STORAGE FOR AN OFFLINE KNOWLEDGE LIBRARY
+-
+An offline library can contain selected encyclopaedia content, dictionaries, maps, coding documentation, PDFs, installers, and other reference material.
+-
+An HDD offers a practical balance of capacity and cost for a large offline library.
+-
+A second HDD can preserve a backup of the library.
+-
+Use an SSD only if fast access or portability justifies its higher price.
+-
+Keep copies of the software needed to read specialised formats.
+-
+Keep a plain-text inventory of the files and versions included in the archive.
+-
+Do not assume a file will remain useful forever if the application needed to open it becomes unavailable.
+-
+Review the library periodically and migrate it to new storage before hardware or software compatibility becomes a problem.
+-
+34. BEST STORAGE FOR A LOW-BUDGET HOME SERVER
+-
+A home server can be built from a compatible desktop, small computer, or NAS appliance.
+-
+The main cost is not just the computer; drives, power consumption, backup, cooling, and replacement parts also matter.
+-
+A system that is used only several hours per day may save electricity compared with a system running continuously, depending on its configuration and workload.
+-
+A computer that is switched off cannot serve files while it is off.
+-
+If the server is used only for local storage, it may not need a powerful CPU or graphics card.
+-
+The simplest system may be a normal computer with an external HDD and a separate disconnected backup.
+-
+Do not spend the entire budget on a server enclosure and leave no budget for backup storage.
+-
+35. BACKUP PLAN: MAIN HDD PLUS DISCONNECTED BACKUP HDD
+-
+STEP 1: Estimate the real size of the files and how quickly the collection is growing.
+-
+STEP 2: Choose a main drive with enough capacity for current files and future growth.
+-
+STEP 3: Buy a second independent drive that can hold the same collection.
+-
+STEP 4: Copy files carefully without disconnecting the drives during transfer.
+-
+STEP 5: Compare file counts and sizes and open a sample of files from the backup.
+-
+STEP 6: For important folders, use a checksum tool such as SHA-256 to verify that the copied data matches the original.
+-
+STEP 7: Safely eject the backup drive after the copy and verification are complete.
+-
+STEP 8: Disconnect the backup when it is not being updated.
+-
+STEP 9: Store the backup away from heat, moisture, pressure, dust, and accidental drops.
+-
+STEP 10: Update the backup at least monthly or after major changes, depending on how much data you can afford to lose.
+-
+STEP 11: Periodically reconnect the backup and verify that files remain readable.
+-
+STEP 12: Record the date of the latest successful backup.
+-
+STEP 13: Replace drives that show persistent read errors or other serious warning signs.
+-
+STEP 14: Keep the most irreplaceable files in another physically separate location if possible.
+-
+36. WHY A DISCONNECTED BACKUP HELPS
+-
+A disconnected backup is less exposed to ransomware that attacks connected drives.
+-
+It is also less likely to be affected by accidental deletion or formatting on the main computer.
+-
+Disconnecting does not protect against theft, fire, flood, or damage that affects both drives stored together.
+-
+Physical separation improves protection against local disasters.
+-
+A disconnected backup must still be updated; an old backup may not contain recent files.
+-
+A sensible schedule balances the risk of losing new files against the time and effort required for backups.
+-
+37. CHECKSUMS AND VERIFICATION
+-
+A checksum is a calculated value used to check whether data has changed.
+-
+SHA-256 is one commonly used cryptographic hash algorithm for verifying files.
+-
+If the source file and backup file have the same SHA-256 checksum, this provides strong evidence that the file contents match.
+-
+A checksum does not repair corrupted files by itself.
+-
+Create checksum records while the source files are known to be good.
+-
+Store checksum records separately from the only copy of the files.
+-
+Recalculate checksums during periodic verification to detect unexpected changes.
+-
+If a checksum differs, do not immediately overwrite the good copy; investigate which version is correct.
+-
+38. HOW TO STORE EACH MEDIUM SAFELY
+-
+HDD: keep it cool, dry, protected from impact, and still while operating.
+-
+HDD: use a padded case for transport and avoid dropping it even when it is switched off.
+-
+SSD: avoid excessive heat, water, electrical damage, and rough connector handling.
+-
+Pen drive: use a cap or protective case where appropriate and avoid bending the connector.
+-
+Memory card: keep it in a labelled protective case and avoid losing it among loose objects.
+-
+CD/DVD/Blu-ray: hold discs by their edges or centre hole and avoid touching the recording surface.
+-
+Optical discs: store in protective cases away from direct sunlight, heat, and high humidity.
+-
+Optical discs: if cleaning is needed, wipe gently from the centre toward the outer edge rather than in circular motions.
+-
+Tape cartridge: follow the manufacturer's storage temperature, humidity, handling, and transport guidance.
+-
+All media: protect against theft, fire, flooding, accidental deletion, malware, and forgotten encryption keys.
+-
+39. FAILURE WARNING SIGNS
+-
+HDD warning signs can include repeated clicking, scraping, repeated spin-up and spin-down, disappearing connections, or persistent read errors.
+-
+If an HDD makes unusual mechanical noises or fails after a physical shock, switch it off and avoid repeated attempts if the data is important.
+-
+Repeated power cycling or running repair utilities on a physically failing drive may make recovery more difficult.
+-
+An SSD may show read-only behaviour, disappearing from the system, controller errors, or persistent I/O errors.
+-
+A pen drive may suddenly become unreadable, show the wrong capacity, or repeatedly disconnect.
+-
+An optical disc may show read errors or fail in one drive but work in another compatible drive.
+-
+If a device contains the only copy of irreplaceable files, professional recovery may be safer than experimentation.
+-
+Recovery is never guaranteed and can be expensive.
+-
+40. WHAT NOT TO DO
+-
+Do not keep the only copy of important files on one HDD.
+-
+Do not assume RAID is a backup.
+-
+Do not buy a drive only because the price is unusually low.
+-
+Do not trust untested high-capacity pen drives or memory cards.
+-
+Do not unplug a drive while files are being written.
+-
+Do not move an operating HDD roughly.
+-
+Do not open an HDD's sealed internal assembly.
+-
+Do not store optical discs in direct sunlight or hot, humid conditions.
+-
+Do not assume an old tape cartridge will be readable without a compatible drive and software.
+-
+Do not assume a storage medium is permanent just because it is marketed for archival use.
+-
+Do not keep the backup permanently connected if the purpose is to protect it from ransomware and accidental deletion.
+-
+41. SECURITY AND ENCRYPTION
+-
+Encrypt private drives when loss or theft could expose sensitive documents.
+-
+Use a trusted encryption method compatible with the operating systems you need.
+-
+Keep the recovery key in a safe place separate from the encrypted drive.
+-
+If both the password and recovery key are lost, the data may become inaccessible.
+-
+Encryption protects confidentiality but does not protect against mechanical failure or corruption.
+-
+Keep a separate backup of encrypted data and verify that the recovery key works.
+-
+Avoid saving the only copy of the recovery key on the drive it unlocks.
+-
+42. RAID LEVELS IN PRACTICAL TERMS
+-
+RAID 0 combines drives for capacity or speed but has no redundancy.
+-
+RAID 1 mirrors data and can survive certain drive failures, but it mirrors deletion and corruption too.
+-
+RAID 5 uses parity and is designed to tolerate one drive failure under the intended configuration.
+-
+RAID 6 uses double parity and is designed to tolerate up to two drive failures in the intended configuration.
+-
+RAID 10 combines mirroring and striping and commonly requires at least four drives.
+-
+Every RAID level has trade-offs in usable capacity, cost, speed, rebuild time, and failure tolerance.
+-
+A separate backup is still required for every RAID configuration.
+-
+43. TOTAL COST OF OWNERSHIP
+-
+The purchase price is only one part of the cost of storage.
+-
+Other costs can include an enclosure, power adapter, cables, drive bay, USB dock, optical writer, discs, cases, tape drive, software, electricity, and replacement hardware.
+-
+A NAS or RAID system can cost substantially more than a single external HDD.
+-
+A tape cartridge can look cheap compared with its capacity, but the tape drive and supporting hardware can make the full system expensive.
+-
+Optical discs may be inexpensive individually, but a multi-terabyte archive needs many discs and considerable labour.
+-
+A large HDD can have a low price per terabyte, but a second backup HDD doubles much of the storage-media cost.
+-
+For valuable data, the cost of a backup should be considered part of the storage budget, not an optional luxury.
+-
+44. RECOMMENDATIONS BY BUDGET AND PURPOSE
+-
+Very small budget: keep existing storage organised, use a reputable drive for the most important files, and make a second copy as soon as possible.
+-
+Moderate budget: use a main HDD and a second independent backup HDD.
+-
+Higher performance requirement: use an SSD for the operating system and active files, plus HDDs for bulk storage and backup.
+-
+Portable work requirement: use an external SSD for frequently moved files and keep an independent backup elsewhere.
+-
+Small offline document archive: consider optical media as an extra copy if the writer, media, and verification workflow are affordable.
+-
+Professional multi-terabyte or larger archive: consider tape only after pricing the complete system and migration plan.
+-
+Multi-device family network: consider a NAS if sharing and convenience justify its additional cost, but maintain a separate backup.
+-
+45. RECOMMENDATION FOR A COLLECTION NEAR 5 TB
+-
+A 5 TB collection is already too large to manage conveniently with CDs or DVDs.
+-
+A 6 TB HDD may hold the collection but leaves little space for growth.
+-
+An 8 TB HDD provides more headroom for a collection near 5 TB.
+-
+The backup should be large enough to contain the same collection, including future additions.
+-
+If the budget cannot cover two large drives immediately, prioritise a second copy of irreplaceable files first and plan a full backup as funds permit.
+-
+Do not treat the main drive as secure merely because it is new.
+-
+Keep the backup disconnected most of the time and update it on a planned schedule.
+-
+If the collection contains family photographs and personal records, consider keeping another copy in a different physical location.
+-
+46. BUYING CHECKLIST FOR BANGLADESH
+-
+Confirm the exact model number, capacity, interface, and form factor before paying.
+-
+Check whether the device is new, used, refurbished, recertified, desktop-class, surveillance-class, or NAS-class.
+-
+Confirm the written warranty duration and which service provider handles warranty claims.
+-
+Check the seller's return policy for dead-on-arrival products.
+-
+For internal HDDs, check whether you have the required SATA data connection, power connector, mounting space, and enclosure.
+-
+For external drives, check cable type, USB compatibility, and power requirements.
+-
+For SSDs, confirm SATA versus NVMe compatibility and physical dimensions.
+-
+For pen drives and memory cards, test the full capacity before loading important files.
+-
+For optical media, confirm that the writer supports the exact disc format and capacity.
+-
+For M-DISC, verify the exact writer compatibility rather than assuming all DVD or Blu-ray drives support every format.
+-
+For tape, obtain a quote for the drive, interface, software, media, and migration plan—not just the cartridge.
+-
+Compare the cost of making two copies rather than buying one device alone.
+-
+47. PRICE SOURCES TO CHECK
+-
+Star Tech — Portable SSD listings: https://www.startech.com.bd/portable-ssd
+-
+Techland BD — Portable SSD listings: https://www.techlandbd.com/pc-components/external-ssd
+-
+Star Tech — Portable HDD listings: https://www.startech.com.bd/portable-hard-disk-drive
+-
+PC House BD — Portable HDD listings: https://www.pchouse.com.bd/portable-hard-disk-drive
+-
+Star Tech — Pen drive listings: https://www.startech.com.bd/pen-drive
+-
+PC House BD — Pen drive listings: https://www.pchouse.com.bd/pen-drive
+-
+Ryans — External CD/DVD writer listings: https://www.ryans.com/category/desktop-component-optical-device
+-
+Computer Solutions Inc. — Verbatim optical media listings: https://www.csi.com.bd/verbatim-optical-disk
+-
+Prices on retailer pages can change at any time, and some models may be out of stock.
+-
+Verify the exact model, warranty, seller, and current price before making a purchase.
+-
+48. FINAL VERDICT
+-
+Best general-purpose bulk storage for a budget-conscious home user: HDD.
+-
+Best for operating systems, applications, and fast game loading: SSD.
+-
+Best for moving files temporarily: reputable USB pen drive.
+-
+Best for compatible camera and phone expansion: genuine SD or microSD card.
+-
+Best for small legacy offline collections: CD or DVD, where the limited capacity is acceptable.
+-
+Best optical option for a selected higher-capacity offline archive: compatible Blu-ray media, with careful verification.
+-
+Potential extra archival option for selected important files: M-DISC, provided the exact format and reader are supported and another copy exists.
+-
+Best for professional large-scale cold archives: managed tape systems where the complete equipment and migration costs are justified.
+-
+Best for local sharing across several devices: NAS, with a separate backup.
+-
+Best for uptime during certain drive failures: an appropriate RAID configuration, always combined with an independent backup.
+-
+Best simple household protection: a main HDD plus a second independent HDD, disconnected except during planned backups.
+-
+Best long-term strategy: multiple independent copies, periodic verification, physical separation, and planned migration to replacement media.
+-
+END OF REPORT
+-
 https://youtu.be/--srD8vlfFE?si=qPOlRzAYOJCQ5fZT
 -
 https://youtu.be/xQV1lg8LQ8U?si=SpR7iagY7gpWOEb0
