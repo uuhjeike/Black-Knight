@@ -1,4 +1,98 @@
 -
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+
+  <title>INFINARA — Infinite Profiles</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="topbar">
+    <a href="./" class="logo">INFINARA<span>.</span></a>
+    <span class="live"><i></i> INFINITE UNIVERSE</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">A UNIVERSE WITHOUT A FINAL PAGE</p>
+
+      <h1>Beyond<br>the <span>Limit.</span></h1>
+
+      <p class="subtitle">
+        Every identity opens another door.
+        Explore without a predefined final profile.
+      </p>
+
+      <form id="searchForm" class="searchbox">
+        <span class="search-icon">⌕</span>
+
+        <input
+          id="searchInput"
+          type="text"
+          inputmode="numeric"
+          placeholder="Search any profile ID..."
+          autocomplete="off"
+          aria-label="Profile ID"
+        >
+
+        <button type="submit">FIND</button>
+      </form>
+
+      <div class="quick-actions">
+        <button id="randomBtn" class="secondary">
+          ↗ Discover a profile
+        </button>
+
+        <button id="homeBtn" class="secondary">
+          ⌂ Explore from beginning
+        </button>
+      </div>
+
+      <div id="notice" class="notice" role="status">
+        Ready to explore.
+      </div>
+    </section>
+
+    <section class="directory">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE DIRECTORY</p>
+          <h2 id="sectionTitle">Explore identities</h2>
+        </div>
+
+        <span id="counter" class="counter">0 PROFILES</span>
+      </div>
+
+      <div id="profileGrid" class="grid"></div>
+
+      <div id="loader" class="loader">
+        <span></span>
+        <p>Preparing the next identities...</p>
+      </div>
+
+      <button id="moreBtn" class="more">
+        Explore more ↓
+      </button>
+
+      <p class="footer-note">
+        INFINARA © · NO FINAL PAGE
+      </p>
+    </section>
+  </main>
+
+  <dialog id="profileDialog" class="profile-dialog">
+    <button id="closeDialog" class="close" aria-label="Close">×</button>
+    <div id="profileDetails"></div>
+  </dialog>
+</body>
+</html>
+-
 THE KINGDOM BEYOND THE FINAL STAR
 -
 When the last star in the universe died, the darkness did not remain empty.
